@@ -1,0 +1,21 @@
+.footer {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-around;
+    background-color: bisque;
+    padding: 2rem 0;
+}
+
+.doormat {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.doormat a:link, a:visited {
+    color: var(--font-color);
+}
+
+.doormat a:hover, a:active {
+    color: var(--primary-color);
+}

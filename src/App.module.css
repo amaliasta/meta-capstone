@@ -1,0 +1,17 @@
+.app {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
