@@ -1,7 +1,24 @@
 .header {
     grid-column: 1 / -1;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color: blanchedalmond;
-    padding: 1rem 2rem;
+    background-color:  var(--bkg-white);;
+    padding: 0 5%;
+}
+
+
+.logo {
+    grid-column: 1 / 5;
+    height: 70%;
+}
+
+@media (max-width: 70rem) {
+    .header {
+        flex-direction: column;
+    }
+
+    .logo {
+        padding-top: 5vh;
+    }
 }

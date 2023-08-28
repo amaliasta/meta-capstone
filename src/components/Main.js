@@ -4,21 +4,22 @@ import classes from "./Main.module.css";
 
 const Main = () => {
     return (
-        <main className={classes.main}>
-            <section className={classes.hero__title}>
-                <h1>Little Lemon</h1>
-                <h2>Chicago</h2>
+        <main className={classes.hero}>
+            <div className={classes.hero__text}>
+                <div className={classes.hero__text_titles}>
+                    <h1>Little Lemon</h1>
+                    <h2>Chicago</h2>
+                </div>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
                 </p>
-                <button className={classes.btn}>
-                    Reserve a table
-                </button>
-            </section>
-            <img
-                className={classes.hero__img}
-                src={heroImg}
-                alt="Food served at Little Lemon"></img>
+                <button className={classes.hero__text_btn}>Reserve a table</button>
+            </div>
+            <picture className={classes.hero__img}>
+                <img src={heroImg} alt="Food served at Little Lemon"></img>
+            </picture>
         </main>
     );
 };
