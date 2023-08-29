@@ -1,0 +1,34 @@
+.titles {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.titles h1 {
+    line-height: 1;
+    color: var(--primary-yellow);
+}
+
+.titles h2 {
+    line-height: 1;
+    color: #fff;
+}
+
+.titles p {
+    font-size: 1.6rem;
+}
+
+@media (max-width: 700px) {
+    .titles {
+        text-align: center;
+    }
+
+    .titles h1 {
+        font-size: 4rem;
+    }
+
+    .titles h2 {
+        font-size: 3.6rem;
+    }
+
+}

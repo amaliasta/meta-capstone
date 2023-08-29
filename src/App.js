@@ -1,20 +1,17 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
-import Specials from "./components/Specials";
+import HomePage from "./components/HomePage";
+import BookingPage from "./components/BookingPage";
 
-import classes from "./App.module.css";
-import Testimonials from "./components/Testimonials";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
     return (
-        <div className={classes.app}>
-            <Header></Header>
-            <Main></Main>
-            <Specials></Specials>
-            <Testimonials></Testimonials>
-            <Footer></Footer>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage />}></Route>
+                <Route path="/booking" element={<BookingPage />}></Route>
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 

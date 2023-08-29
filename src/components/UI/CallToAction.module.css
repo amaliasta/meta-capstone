@@ -1,0 +1,12 @@
+.btn {
+    background-color: var(--font-black);
+    padding: 1rem 2rem;
+    color: var(--bkg-white);
+    border-radius: 0.3rem;
+    min-width: 12rem;
+    transition: all 300ms;
+}
+
+.btn:hover {
+    background-color: #111;
+}

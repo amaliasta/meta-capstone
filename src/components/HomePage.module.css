@@ -1,0 +1,38 @@
+.app {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 2rem;
+    grid-auto-rows: minmax(150px, auto);
+}
+
+p, h3, a {
+    font-family: Karla;
+}
+
+h1, h2, h4 {
+    font-family: 'Markazi Text';
+}
+
+h1 {
+    font-size: 6.4rem;
+}
+
+h2, h3 {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+section, main, footer {
+    padding-top: 4rem;
+}
+
+
+@media (max-width: 124rem) {
+    .app {
+        grid-column-gap: 1rem;
+    }
+}
