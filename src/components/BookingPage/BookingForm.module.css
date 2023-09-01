@@ -1,0 +1,16 @@
+.form {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form input, .form select {
+    width: 50rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--bkg-light-grey);
+    padding: 0.5rem 1rem;
+}

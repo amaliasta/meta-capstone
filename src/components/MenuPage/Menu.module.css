@@ -1,15 +1,5 @@
-.menu__details {
-    display: flex;
-    flex-direction: column;
-    max-width: 75%;
-}
-
-.menu__item p {
-    font-size: 1.4rem;
-    padding: 1rem;
-}
-
 .menu__items {
+    grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
 }
@@ -22,6 +12,17 @@
     width: 30%;
     border-radius: 0 0 1rem 1rem;
     background-color: var(--bkg-light-grey);
+}
+
+.menu__item p {
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+.menu__details {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
 }
 
 .menu__img {

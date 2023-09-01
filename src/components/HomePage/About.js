@@ -8,7 +8,7 @@ const About = () => {
     return (
         <section className={classes.section}>
             <div className={classes.text}>
-                <Chicago />
+                <Chicago highContrast={true} />
                 <p>
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor
                     do amet sint. Velit officia consequat duis enim velit
@@ -18,18 +18,14 @@ const About = () => {
                     mollit.
                 </p>
             </div>
-            <div className={classes.images}>
-                <picture className={classes.image__1}>
-                    <img
-                        src={restaurant1}
-                        alt="Inside Little Lemon restaurant"></img>
-                </picture>
-                <picture className={classes.image__2}>
-                    <img
-                        src={restaurant2}
-                        alt="Little Lemon chef working"></img>
-                </picture>
-            </div>
+            <picture className={classes.image__1}>
+                <img
+                    src={restaurant1}
+                    alt="Inside Little Lemon restaurant"></img>
+            </picture>
+            <picture className={classes.image__2}>
+                <img src={restaurant2} alt="Little Lemon chef working"></img>
+            </picture>
         </section>
     );
 };

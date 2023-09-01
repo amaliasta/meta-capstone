@@ -1,0 +1,24 @@
+.bookings span {
+ border-radius: 1rem;
+ padding: 1rem 2rem;
+ background-color: var(--accent-orange-tint);
+}
+
+.bookings ul {
+    line-height: 2;
+}
+
+.date {
+}
+
+.time {
+
+}
+
+.guests {
+
+}
+
+.occasion {
+
+}

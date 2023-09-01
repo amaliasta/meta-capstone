@@ -4,8 +4,15 @@ import classes from "./Main.module.css";
 
 import Chicago from "../UI/Chicago";
 import CallToAction from "../UI/CallToAction";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+    const navigate = useNavigate();
+
+    const handleClick =  () => {
+        navigate('/booking');
+    }
+
     return (
         <main className={classes.hero}>
             <div className={classes.hero__text}>
@@ -15,7 +22,7 @@ const Main = () => {
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                 </p>
-                <CallToAction />
+                <CallToAction onClick={handleClick}>Reserve a Table</CallToAction> 
             </div>
             <picture className={classes.hero__img}>
                 <img src={heroImg} alt="Food served at Little Lemon"></img>

@@ -1,0 +1,15 @@
+.page {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 2rem;
+    grid-auto-rows: minmax(150px, auto);
+}
+
+
+.page section, footer, main {
+    padding-top: 4rem;
+}
+
+.page h4 {
+    font-size: 1.8rem;
+}

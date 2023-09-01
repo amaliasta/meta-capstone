@@ -1,17 +1,31 @@
-.titles {
+.titles,
+.titlesHC {
     display: flex;
     flex-direction: column;
     text-align: left;
+    font-family: var(--title-font);
+    line-height: 1;
 }
 
 .titles h1 {
-    line-height: 1;
+    font-size: 6.4rem;
     color: var(--primary-yellow);
+}
+
+.titlesHC h1 {
+    font-size: 6.4rem;
+    color: var(--primary-yellow);
+}
+
+.titlesHC h2 {
+    font-size: 4rem;
+    color: var(--primary-green);
 }
 
 .titles h2 {
     line-height: 1;
     color: #fff;
+    font-size: 4rem;
 }
 
 .titles p {
@@ -19,16 +33,15 @@
 }
 
 @media (max-width: 700px) {
-    .titles {
+    .titles, .titlesHC {
         text-align: center;
     }
 
-    .titles h1 {
+    .titles h1, .titlesHC h1 {
         font-size: 4rem;
     }
 
-    .titles h2 {
+    .titles h2, .titlesHC h2  {
         font-size: 3.6rem;
     }
-
 }
