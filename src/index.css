@@ -39,6 +39,10 @@ a {
   text-decoration: none;
 }
 
+a:link, a:visited {
+  color: var(--font-black)
+}
+
 button {
   border: none;
   background-color: transparent;

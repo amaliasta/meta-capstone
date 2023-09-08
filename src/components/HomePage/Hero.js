@@ -1,12 +1,12 @@
 import React from "react";
 import heroImg from "../../assets/restauranfood.jpg";
-import classes from "./Main.module.css";
+import classes from "./Hero.module.css";
 
 import Chicago from "../UI/Chicago";
 import CallToAction from "../UI/CallToAction";
 import { useNavigate } from "react-router-dom";
 
-const Main = () => {
+const Hero = () => {
     const navigate = useNavigate();
 
     const handleClick =  () => {
@@ -31,4 +31,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Hero;

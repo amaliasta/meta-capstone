@@ -8,6 +8,7 @@ const CallToAction = ({ ...props }) => {
         <button
             className={`${classes.btn} ${disabledClass}`}
             onClick={props.onClick}
+            data-testid="submit"
             disabled={props.disabled}
             type={props.type ? "submit" : "button"}>
             {props.children}

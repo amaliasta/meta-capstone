@@ -14,6 +14,10 @@
     font-size: 1.6rem;
 }
 
+a.active {
+    color: red
+}
+
 @media (max-width: 124rem) {
     .list {
         flex-wrap: wrap;

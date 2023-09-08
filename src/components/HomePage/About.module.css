@@ -21,7 +21,7 @@
 
 
 .image__1, .image__2 {
-    align-self: center
+    text-align: center;
 }
 
 .image__1 img {

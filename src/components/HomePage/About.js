@@ -6,7 +6,7 @@ import restaurant2 from "../../assets/restaurant chef B.jpg";
 
 const About = () => {
     return (
-        <section className={classes.section}>
+        <section className={classes.section} id="about">
             <div className={classes.text}>
                 <Chicago highContrast={true} />
                 <p>

@@ -1,9 +1,10 @@
 import React from "react";
 import classes from "./Nav.module.css";
-
+import SmoothScrollNavLink  from "../UI/SmoothNavLink";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
+
     return (
         <nav className={classes.nav}>
             <ul className={classes.list}>
@@ -11,7 +12,9 @@ const Nav = () => {
                     <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink>About</NavLink>
+                    <SmoothScrollNavLink to="/about">
+                        About
+                    </SmoothScrollNavLink>
                 </li>
                 <li>
                     <NavLink to="/menu">Menu</NavLink>
