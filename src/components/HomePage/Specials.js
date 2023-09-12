@@ -15,7 +15,7 @@ const Specials = () => {
     return (
         <section className={classes.specials}>
             <div className={classes.specials__header}>
-                <h3>Specials</h3>
+                <h2>Specials</h2>
                 <CallToAction onClick={clickMenuHandler}>Online Menu</CallToAction>
             </div>
             <Menu />

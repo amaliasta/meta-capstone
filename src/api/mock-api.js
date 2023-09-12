@@ -19,8 +19,6 @@ export function initializeLocalStorage() {
 export function fetchAPI(date) {
     const rawData = localStorage.getItem("bookingData");
     const bookingData = JSON.parse(rawData);
-    // console.log(JSON.parse(localStorage.getItem("bookingData")))
-    // console.log(bookingData)
     return new Promise((resolve) => {
         setTimeout(() => {
             const availableTimes = bookingData ? bookingData[date] : []; // Failing here
@@ -37,7 +35,6 @@ export function submitAPI(formData) {
             if (success) {
                 const rawData = localStorage.getItem("bookingData");
                 const bookingData = JSON.parse(rawData);
-                console.log('object retrieved from localStorage', bookingData) // null pq no corre initializeLocalStorage(). Esto corre en Main comp. dentro de un efecto
                 const { resDate, resTime } = formData;
                 bookingData[resDate] = bookingData[resDate].filter(
                     (times) => times !== resTime

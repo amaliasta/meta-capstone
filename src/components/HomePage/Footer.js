@@ -6,52 +6,52 @@ import Logo from "../../assets/Logo.svg"
 const Footer = () => {
     return (
         <footer className={classes.footer}>
-            <div><img src={Logo}></img></div>
+            <div><img src={Logo} alt="Little Lemon logo"></img></div>
             <div>
                 <ul className={classes.doormat}>
                     <li>
-                        <a href="">Home</a>
+                        <button>Home</button>
                     </li>
                     <li>
-                        <a href="">About</a>
+                        <button>About</button>
                     </li>
                     <li>
-                        <a href="">Menu</a>
+                        <button>Menu</button>
                     </li>
                     <li>
-                        <a href="">Reservations</a>
+                        <button>Reservations</button>
                     </li>
                     <li>
-                        <a href="">Order Online</a>
+                        <button>Order Online</button>
                     </li>
                     <li>
-                        <a href="">Login</a>
+                        <button>Login</button>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul className={classes.doormat}>
                     <li>
-                        <a href="">Address: 29th street East Chicago</a>
+                        <button>Address: 29th street East Chicago</button>
                     </li>
                     <li>
-                        <a href="">Email: littlelemon@gmail.com</a>
+                        <button>Email: littlelemon@gmail.com</button>
                     </li>
                     <li>
-                        <a href="">Phone: 49 911525</a>
+                        <button>Phone: 49 911525</button>
                     </li>
                 </ul>
             </div>
             <div>
             <ul className={classes.doormat}>
                     <li>
-                        <a href="">Facebook</a>
+                        <button>Facebook</button>
                     </li>
                     <li>
-                        <a href="">Instagram</a>
+                        <button>Instagram</button>
                     </li>
                     <li>
-                        <a href="">Twitter</a>
+                        <button>Twitter</button>
                     </li>
                 </ul>
             </div>

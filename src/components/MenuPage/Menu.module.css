@@ -45,6 +45,10 @@
     justify-content: space-between;
 }
 
+.menu__title h4 {
+    font-size: 2.4rem;
+}
+
 .menu__title span {
     color: var(--accent-orange);
     font-size: 1.4rem;

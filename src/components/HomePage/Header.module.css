@@ -4,7 +4,11 @@
     align-items: center;
     justify-content: space-between;
     background-color:  var(--bkg-white);;
-    padding: 0 5%;
+    padding: 2rem 5%;
+}
+
+.header img {
+    height: 12rem;
 }
 
 

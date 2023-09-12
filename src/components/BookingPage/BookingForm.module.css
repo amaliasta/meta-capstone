@@ -16,9 +16,23 @@
     padding: 0.5rem 1rem;
 }
 
+.title {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    grid-row: 2;
+    height: 2rem;
+}
+
 .confirmation {
     grid-column: 1 / -1;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.error {
+    color: red;
+    margin-top: -1.5rem;
+    font-size: 1.2rem;
 }

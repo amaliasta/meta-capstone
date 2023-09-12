@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 2rem;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(80px, auto);
 }
 
 
@@ -10,6 +10,3 @@
     padding-top: 4rem;
 }
 
-.page h4 {
-    font-size: 1.8rem;
-}
