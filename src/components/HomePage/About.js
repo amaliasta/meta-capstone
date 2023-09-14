@@ -18,14 +18,18 @@ const About = () => {
                     mollit.
                 </p>
             </div>
-            <picture className={classes.image__1}>
-                <img
-                    src={restaurant1}
-                    alt="Inside Little Lemon restaurant"></img>
-            </picture>
-            <picture className={classes.image__2}>
-                <img src={restaurant2} alt="Little Lemon chef working"></img>
-            </picture>
+            <div className={classes.images}>
+                <picture className={classes.image__1}>
+                    <img
+                        src={restaurant1}
+                        alt="Inside Little Lemon restaurant"></img>
+                </picture>
+                <picture className={classes.image__2}>
+                    <img
+                        src={restaurant2}
+                        alt="Little Lemon chef working"></img>
+                </picture>
+            </div>
         </section>
     );
 };

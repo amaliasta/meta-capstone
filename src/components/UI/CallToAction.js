@@ -1,17 +1,17 @@
 import React from "react";
 import classes from "./CallToAction.module.css";
 
-const CallToAction = ({ ...props }) => {
-    const disabledClass = props.disabled ? classes.disabled : '';
+const CallToAction = ({ disabled, onClick, submit, children }) => {
+    const disabledClass = disabled ? classes.disabled : "";
 
     return (
         <button
             className={`${classes.btn} ${disabledClass}`}
-            onClick={props.onClick}
+            onClick={onClick}
             data-testid="submit"
-            disabled={props.disabled}
-            type={props.type ? "submit" : "button"}>
-            {props.children}
+            disabled={disabled}
+            type={submit ? "submit" : "button"}>
+            {children}
         </button>
     );
 };

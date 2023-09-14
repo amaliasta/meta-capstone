@@ -40,7 +40,7 @@ a {
   padding: 0.5rem 1rem;
 }
 
-a:focus, a:focus-visible,
+
 button:focus, button:focus-visible,
 input:focus, input:focus-visible,
 select:focus, select:focus-visible  {
@@ -52,12 +52,18 @@ label:hover {
   cursor: pointer;
 }
 
+
 a:focus, a:focus-visible {
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
+  outline: none;
 }
 
 a:link, a:visited {
-  color: var(--font-black)
+  color: var(--font-black);
+}
+
+a:active {
+  box-shadow: none;
 }
 
 button {
@@ -65,6 +71,7 @@ button {
   background-color: transparent;
   font-size: 2rem;
   font-family: inherit;
+  cursor: pointer;
 }
 
 h1, h2, h3, h4 {

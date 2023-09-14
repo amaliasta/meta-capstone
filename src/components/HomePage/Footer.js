@@ -1,12 +1,16 @@
 import React from "react";
 import classes from "./Footer.module.css";
-import Logo from "../../assets/Logo.svg"
-
+import Logo from "../../assets/Logo.svg";
 
 const Footer = () => {
     return (
         <footer className={classes.footer}>
-            <div><img src={Logo} alt="Little Lemon logo"></img></div>
+            <div>
+                <img
+                    className={classes.logo}
+                    src={Logo}
+                    alt="Little Lemon logo"></img>
+            </div>
             <div>
                 <ul className={classes.doormat}>
                     <li>
@@ -43,7 +47,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div>
-            <ul className={classes.doormat}>
+                <ul className={classes.doormat}>
                     <li>
                         <button>Facebook</button>
                     </li>

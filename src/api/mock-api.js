@@ -23,7 +23,7 @@ export function fetchAPI(date) {
         setTimeout(() => {
             const availableTimes = bookingData ? bookingData[date] : []; // Failing here
             resolve(availableTimes);
-        }, 600);
+        }, 400);
     });
 }
 
@@ -42,6 +42,6 @@ export function submitAPI(formData) {
                 localStorage.setItem("bookingData", JSON.stringify(bookingData)); // update object to contain filtered array
             }
             resolve(success);
-        }, 600); // Simulated delay of 1 second
+        }, 1000); // Simulated delay of 1 second
     });
 }

@@ -1,32 +1,78 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Nav.module.css";
-import SmoothScrollNavLink  from "../UI/SmoothNavLink";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Nav = () => {
+    const { hash, key } = useLocation();
+
+    useEffect(() => {
+        if (hash === "") {
+            window.scrollTo(0, 0);
+        } else {
+            const id = hash.replace("#", "");
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [hash, key]);
 
     return (
         <nav className={classes.nav}>
             <ul className={classes.list}>
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            isActive ? classes["currently-selected"] : ""
+                        }>
+                        Home
+                    </NavLink>
                 </li>
                 <li>
-                    <SmoothScrollNavLink to="/about">
+                    <NavLink
+                        to="/#about"
+                        className={({ isActive }) =>
+                            isActive ? classes["currently-selected"] : ""
+                        }>
                         About
-                    </SmoothScrollNavLink>
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/menu">Menu</NavLink>
+                    <NavLink
+                        to="/#menu"
+                        className={({ isActive }) =>
+                            isActive ? classes["currently-selected"] : ""
+                        }>
+                        Menu
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/booking">Reservations</NavLink>
+                    <NavLink
+                        to="/booking"
+                        className={({ isActive }) =>
+                            isActive ? classes["currently-selected"] : ""
+                        }>
+                        Reservations
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink>Order Online</NavLink>
+                    <NavLink
+                        to="/order"
+                        className={({ isActive }) =>
+                            isActive ? classes["currently-selected"] : ""
+                        }>
+                        Order Online
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink>Login</NavLink>
+                    <NavLink
+                        to="/login"
+                        className={({ isActive }) =>
+                            isActive ? classes["currently-selected"] : ""
+                        }>
+                        Login
+                    </NavLink>
                 </li>
             </ul>
         </nav>

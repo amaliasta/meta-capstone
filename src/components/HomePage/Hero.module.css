@@ -7,6 +7,11 @@
     padding-right: 15%;
 }
 
+.hero p {
+    line-height: 1.5;
+    padding-right: 10%;
+}
+
 .hero__text {
     flex: 1;
     grid-column: 3 / 7;
@@ -41,6 +46,10 @@
         flex-direction: column;
         padding-left: 5%;
         padding-right: 5%;
+    }
+
+    .hero p {
+        padding-right: 0;
     }
 
     .hero__text {

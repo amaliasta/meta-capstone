@@ -1,11 +1,9 @@
 .footer {
     grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     background-color: var(--accent-orange-tint);
     padding: 2rem 0;
-
-    display: flex;
 }
 
 .footer div {
@@ -30,7 +28,12 @@
 
 
 @media (max-width: 700px) {
-    .footer {
-        flex-wrap: wrap;
+    .logo {
+        grid-column: 2;
     }
+
+    .doormat:first-of-type {
+        grid-column: 3;
+    }
+
 }

@@ -1,9 +1,4 @@
-import {
-    render,
-    screen,
-    act,
-    waitFor,
-} from "@testing-library/react";
+import { render, screen, act, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import BookingForm from "./BookingForm";
 import Main from "./Main";
@@ -20,79 +15,74 @@ const invalidMaxDate = new Date();
 invalidMaxDate.setDate(invalidMaxDate.getDate() + 9);
 invalidMaxDate.setHours(23, 59, 59, 999);
 
-const invalidFormState = {
-    resDate: invalidMaxDate,
-    guests: "",
-    occasion: "",
-    resTime: "",
-};
-
-const times = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+const occasions = ["Anniversary", "Birthday", "Other"];
 
 test("Renders the BookingForm", () => {
     const { getByText } = render(
         <BookingForm
             formState={formState}
-            times={times}
-            setFormState={() => {}}
-            setTimes={() => {}}
+            dispatchFormState={() => {}}
+            occasions={occasions}
         />
     );
 
-    const labelElement = getByText(
-        "Choose date (only today and next four days)"
-    );
+    const labelElement = getByText("Choose date (within 5-day range)");
     expect(labelElement).toBeTruthy();
 });
 
 test("Submits the booking form", async () => {
     render(<Main />);
 
-    // Simulate user interactions: Fill in the form fields
     const dateInput = screen.getByTestId("select-date");
+    const currentDate = new Date().toISOString().split("T")[0];
+
     act(() => {
-        const currentDate = new Date().toISOString().split("T")[0];
         userEvent.clear(dateInput);
         userEvent.type(dateInput, currentDate);
     });
 
-    act(() => userEvent.type(screen.getByTestId("select-guests"), "2"));
-    act(() =>
-        userEvent.selectOptions(
-            screen.getByTestId("select-occasion"),
-            "Anniversary"
-        )
-    );
-
-    // Wait for options to appear
     await waitFor(() => {
         const customOption = screen.getAllByTestId("time-option");
         expect(customOption).toBeTruthy();
     });
 
-    act(() =>
-        userEvent.selectOptions(screen.getByTestId("select-time"), "18:00")
-    );
+    const selectTimeField = screen.getByTestId("select-time");
+    const selectGuestsField = screen.getByTestId("select-guests");
+    const selectOccasionField = screen.getByTestId("select-occasion");
+
     act(() => {
-        userEvent.click(screen.getByTestId("submit"));
+        userEvent.selectOptions(selectTimeField, "18:00");
+
+        userEvent.clear(selectGuestsField);
+        userEvent.type(selectGuestsField, "2");
+
+        userEvent.selectOptions(selectOccasionField, "Anniversary");
+
+        const submitBtn = screen.getByTestId("submit");
+        expect(submitBtn).not.toHaveAttribute("disabled={true}");
+        expect(screen.getByRole("option", { name: "18:00" }).selected).toBe(
+            true
+        );
+        userEvent.click(submitBtn);
+    });
+    await waitFor(() => {
+        const error = screen.queryByTestId("error");
+        expect(error).not.toBeTruthy();
     });
 
     await waitFor(() => {
-        const confirmationSection = screen.queryByTestId("confirmation");
-        expect(confirmationSection).toBeTruthy();
+        const confirmation = screen.findByTestId("confirmation");
+        expect(confirmation).toBeTruthy();
     });
 });
-
-
 
 describe("BookingForm Component", () => {
     it("should have correct HTML5 attributes for date input", async () => {
         render(
             <BookingForm
                 formState={formState}
-                times={times}
-                setFormState={() => {}}
-                setTimes={() => {}}
+                dispatchFormState={() => {}}
+                occasions={occasions}
             />
         );
         const dateInput = screen.getByTestId("select-date");
@@ -109,9 +99,8 @@ describe("BookingForm Component", () => {
         render(
             <BookingForm
                 formState={formState}
-                times={times}
-                setFormState={() => {}}
-                setTimes={() => {}}
+                dispatchFormState={() => {}}
+                occasions={occasions}
             />
         );
         const timeSelect = screen.getByTestId("select-time");
@@ -127,9 +116,9 @@ describe("BookingForm Component", () => {
         render(
             <BookingForm
                 formState={formState}
-                times={times}
-                setFormState={() => {}}
-                setTimes={() => {}}></BookingForm>
+                dispatchFormState={() => {}}
+                occasions={occasions}
+            />
         );
 
         act(() => {
@@ -139,53 +128,31 @@ describe("BookingForm Component", () => {
 
         await waitFor(() => {
             const errorElement = screen.getByText(
-                "reservations can only be made 5 days before"
+                "Reservations can only be made for the next 5 days"
             );
             expect(errorElement).toBeTruthy();
         });
     });
-
-    // it("checks that date field validation shows error when invalid date is entered", async () => {
-    //     render(
-    //         <BookingForm
-    //             formState={formState}
-    //             times={times}
-    //             setFormState={() => {}}
-    //             setTimes={() => {}}></BookingForm>
-    //     );
-
-    //     act(() => {
-    //         userEvent.click(screen.getByTestId("submit"));
-    //     });
-
-    //     await waitFor(() => {
-    //         const errorElement = screen.getByText(
-    //             "reservations can only be made 5 days before"
-    //         );
-    //         expect(errorElement).toBeTruthy();
-    //     });
-    // });
 });
-
 
 test("Disables booking form submit button", async () => {
     render(<Main />);
 
     // Simulate user interactions: Fill in the form fields
-    const dateInput = screen.getByTestId("select-date");
-    act(() => {
-        const currentDate = new Date().toISOString().split("T")[0];
-        userEvent.clear(dateInput);
-        userEvent.type(dateInput, currentDate);
-    });
+    const dateInputField = screen.getByTestId("select-date");
+    const selectGuestsField = screen.getByTestId("select-guests");
+    const selectOccasionField = screen.getByTestId("select-occasion");
+    const currentDate = new Date().toISOString().split("T")[0];
 
-    act(() => userEvent.type(screen.getByTestId("select-guests"), "0"));
-    act(() =>
-        userEvent.selectOptions(
-            screen.getByTestId("select-occasion"),
-            "Anniversary"
-        )
-    );
+    act(() => {
+        userEvent.clear(dateInputField);
+        userEvent.type(dateInputField, currentDate);
+
+        userEvent.clear(selectGuestsField);
+        userEvent.type(selectGuestsField, "0");
+
+        userEvent.selectOptions(selectOccasionField, "Anniversary");
+    });
 
     // Wait for options to appear
     await waitFor(() => {
@@ -193,15 +160,11 @@ test("Disables booking form submit button", async () => {
         expect(customOption).toBeTruthy();
     });
 
-    act(() =>
-        userEvent.selectOptions(screen.getByTestId("select-time"), "18:00")
-    );
     act(() => {
+        userEvent.selectOptions(screen.getByTestId("select-time"), "18:00");
         userEvent.click(screen.getByTestId("submit"));
     });
 
-    act(() => {
-        const confirmationSection = screen.queryByTestId("confirmation");
-        expect(confirmationSection).not.toBeTruthy();
-    });
+    const confirmationSection = screen.queryByTestId("confirmation");
+    expect(confirmationSection).not.toBeTruthy();
 });

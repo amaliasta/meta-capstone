@@ -1,6 +1,7 @@
 .nav {
     grid-column: 6 / -1;
     min-width: 50rem;
+    margin-top: 1rem;
 }
 
 .list {
@@ -10,38 +11,44 @@
     list-style: none;
 }
 
-.list button {
-    font-size: 1.6rem;
+.list a {
+    font-size: 1.8rem;
 }
 
 .list li {
-    margin: 0 20px; /* Adjust as needed */
+    margin: 0 2rem 0 0;
     position: relative; /* Create a stacking context for the ::before pseudo-element */
 }
 
 .list a {
     text-decoration: none;
     position: relative;
+    border-radius: 0.5rem;
 }
 
 .list a::before {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: -1rem;
+    left: 0;
     width: 100%;
-    height: 2px; /* Adjust the height of the line as needed */
-    transition: all 1s ease; /* Add a smooth transition effect */
-    transform: scaleX(0) translateX(-50%); /* Start with the line hidden */
+    height: 4px;
+    border-radius: 0.5rem;
+    transform: scaleX(0); /* Start with the line hidden */
     transform-origin: left;
+    transition: all 0.5s ease-out;
 }
 
-.list a:hover::before {
+.list a:hover::before,
+.list a:focus::before,
+.list a:focus-visible::before {
     background-color: var(--primary-yellow); /* Color of the line on hover */
     transform: scaleX(1); /* Expand the line on hover */
 }
 
-
+.currently-selected {
+    background-color: var(--primary-yellow);
+}
 
 @media (max-width: 124rem) {
     .list {
