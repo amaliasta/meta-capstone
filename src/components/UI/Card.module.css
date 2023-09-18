@@ -3,4 +3,22 @@
     background-color: var(--bkg-white);
     border-radius: 1rem;
     padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 6rem;
+}
+
+
+@media (max-width: 1240px) {
+    .avatar {
+        height: 12vh;
+    }
+
+
 }

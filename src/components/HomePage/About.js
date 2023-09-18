@@ -6,25 +6,25 @@ import restaurant2 from "../../assets/restaurant chef B.jpg";
 
 const About = () => {
     return (
-        <section className={classes.section} id="about">
-            <div className={classes.text}>
+        <section className={classes.about} id="about">
+            <div className={classes.about__text}>
                 <Chicago highContrast={true} />
                 <p>
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                    do amet sint. Velit officia consequat duis enim velit
-                    mollit. Exercitation veniam consequat sunt nostrud amet.
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                    do amet sint. Velit officia consequat duis enim velit
-                    mollit.
+                    Little Lemon was born from a passion for exquisite cuisine
+                    and a love for this iconic city. Our journey began with a
+                    simple idea – to offer a diverse culinary experience that
+                    celebrates Chicago's rich food culture. Today, we're proud
+                    to be a cherished part of this vibrant community, inviting
+                    guests to savor the flavors of Chicago, one bite at a time.
                 </p>
             </div>
-            <div className={classes.images}>
-                <picture className={classes.image__1}>
+            <div className={classes.about__images}>
+                <picture className={classes.about__images_1}>
                     <img
                         src={restaurant1}
                         alt="Inside Little Lemon restaurant"></img>
                 </picture>
-                <picture className={classes.image__2}>
+                <picture className={classes.about__images_2}>
                     <img
                         src={restaurant2}
                         alt="Little Lemon chef working"></img>

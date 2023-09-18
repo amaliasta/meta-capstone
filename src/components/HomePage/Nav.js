@@ -2,26 +2,38 @@ import React, { useEffect } from "react";
 import classes from "./Nav.module.css";
 import { NavLink, useLocation } from "react-router-dom";
 
-const Nav = () => {
-    const { hash, key } = useLocation();
+const Nav = (props) => {
+    // const { hash, key } = useLocation();
 
-    useEffect(() => {
-        if (hash === "") {
-            window.scrollTo(0, 0);
-        } else {
-            const id = hash.replace("#", "");
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
+    // useEffect(() => {
+    //     if (hash === "") {
+    //         window.scrollTo(0, 0);
+    //     } else {
+    //         const id = hash.replace("#", "");
+    //         const element = document.getElementById(id);
+    //         if (element) {
+    //             element.scrollIntoView({ behavior: "smooth" });
+    //         }
+    //     }
+    // }, [hash, key]);
+
+    const { setIsOpen } = props;
+
+    // Check if setIsOpen is a function before using it
+    const closeMobileMenu = () => {
+        setIsOpen((prev) => {
+            if (prev) {
+                return !prev;
             }
-        }
-    }, [hash, key]);
+        });
+    };
 
     return (
         <nav className={classes.nav}>
             <ul className={classes.list}>
                 <li>
                     <NavLink
+                        onClick={closeMobileMenu}
                         to="/"
                         className={({ isActive }) =>
                             isActive ? classes["currently-selected"] : ""
@@ -31,7 +43,8 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/#about"
+                        onClick={closeMobileMenu}
+                        to="/about"
                         className={({ isActive }) =>
                             isActive ? classes["currently-selected"] : ""
                         }>
@@ -40,7 +53,8 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/#menu"
+                        onClick={closeMobileMenu}
+                        to="/menu"
                         className={({ isActive }) =>
                             isActive ? classes["currently-selected"] : ""
                         }>
@@ -49,6 +63,7 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
+                        onClick={closeMobileMenu}
                         to="/booking"
                         className={({ isActive }) =>
                             isActive ? classes["currently-selected"] : ""
@@ -58,6 +73,7 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
+                        onClick={closeMobileMenu}
                         to="/order"
                         className={({ isActive }) =>
                             isActive ? classes["currently-selected"] : ""
@@ -67,6 +83,7 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
+                        onClick={closeMobileMenu}
                         to="/login"
                         className={({ isActive }) =>
                             isActive ? classes["currently-selected"] : ""

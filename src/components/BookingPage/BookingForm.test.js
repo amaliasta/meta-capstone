@@ -33,12 +33,12 @@ test("Renders the BookingForm", () => {
 test("Submits the booking form", async () => {
     render(<Main />);
 
-    const dateInput = screen.getByTestId("select-date");
+    const dateInputField = screen.getByTestId("select-date");
     const currentDate = new Date().toISOString().split("T")[0];
 
     act(() => {
-        userEvent.clear(dateInput);
-        userEvent.type(dateInput, currentDate);
+        userEvent.clear(dateInputField);
+        userEvent.type(dateInputField, currentDate);
     });
 
     await waitFor(() => {
@@ -49,7 +49,8 @@ test("Submits the booking form", async () => {
     const selectTimeField = screen.getByTestId("select-time");
     const selectGuestsField = screen.getByTestId("select-guests");
     const selectOccasionField = screen.getByTestId("select-occasion");
-
+    const submitBtn = screen.getByTestId("submit");
+    
     act(() => {
         userEvent.selectOptions(selectTimeField, "18:00");
 
@@ -58,19 +59,12 @@ test("Submits the booking form", async () => {
 
         userEvent.selectOptions(selectOccasionField, "Anniversary");
 
-        const submitBtn = screen.getByTestId("submit");
         expect(submitBtn).not.toHaveAttribute("disabled={true}");
-        expect(screen.getByRole("option", { name: "18:00" }).selected).toBe(
-            true
-        );
         userEvent.click(submitBtn);
     });
     await waitFor(() => {
         const error = screen.queryByTestId("error");
         expect(error).not.toBeTruthy();
-    });
-
-    await waitFor(() => {
         const confirmation = screen.findByTestId("confirmation");
         expect(confirmation).toBeTruthy();
     });

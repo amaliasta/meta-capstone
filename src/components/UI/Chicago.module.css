@@ -1,4 +1,4 @@
-.titles,
+.titlesLC,
 .titlesHC {
     display: flex;
     flex-direction: column;
@@ -9,39 +9,57 @@
 
 .titles h1 {
     font-size: 6.4rem;
+}
+
+.titles h2 {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.titlesLC h1 {
     color: var(--primary-yellow);
 }
 
 .titlesHC h1 {
-    font-size: 6.4rem;
     color: var(--primary-yellow);
 }
 
 .titlesHC h2 {
-    font-size: 4rem;
     color: var(--primary-green);
 }
 
-.titles h2 {
-    line-height: 1;
+.titlesLC h2 {
     color: #fff;
-    font-size: 4rem;
 }
 
-.titles p {
+.titlesLC p {
     font-size: 1.6rem;
 }
 
+@media (max-width: 1240px) {
+    .titles h1 {
+        font-size: 4.8rem;
+    }
+    
+    .titles h2 {
+        font-size: 3.2rem;
+        line-height: 1;
+    }
+}
+
 @media (max-width: 700px) {
-    .titles, .titlesHC {
+    .titles,
+    .titlesHC {
         text-align: center;
     }
 
-    .titles h1, .titlesHC h1 {
+    .titles h1,
+    .titlesHC h1 {
         font-size: 4rem;
     }
 
-    .titles h2, .titlesHC h2  {
+    .titles h2,
+    .titlesHC h2 {
         font-size: 3.6rem;
     }
 }

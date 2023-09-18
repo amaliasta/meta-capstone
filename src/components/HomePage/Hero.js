@@ -14,30 +14,34 @@ const Hero = () => {
     };
 
     return (
-        <main className={classes.hero}>
-            <div className={classes.hero__text}>
-                <Chicago />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                </p>
-                <p>
-                    Itaque soluta architecto reprehenderit consequatur totam
-                    sequi corrupti ratione distinctio ad laborum dolorum, dicta
-                    quae numquam doloribus assumenda, sapiente nobis, ea dolore!
-                </p>
-                <p>
-                    Aperiam rerum aspernatur molestiae laudantium.
-                </p>
-                <CallToAction onClick={handleClick}>
-                    Reserve a Table
-                </CallToAction>
-            </div>
-            <picture className={classes.hero__img}>
-                <img src={heroImg} alt="Food served at Little Lemon"></img>
-            </picture>
-        </main>
+        <section className={classes.hero}>
+            <main className={classes.hero__content}>
+                <div className={classes.hero__text}>
+                    <Chicago />
+                    <div className={classes.hero__paragraphs}>
+                        <p>
+                            Discover a hidden gem in Chicago's culinary scene.
+                            Our restaurant offers a diverse menu, blending local
+                            flavors with global inspirations.
+                        </p>
+                        <p>
+                            Located in the heart of the city, Little Lemon
+                            promises an unforgettable culinary journey that
+                            captures the essence of Chicago's food culture.
+                        </p>
+                        <p>
+                            Let's celebrate Chicago's culinary delights together!
+                        </p>
+                    </div>
+                    <CallToAction onClick={handleClick}>
+                        Reserve a Table
+                    </CallToAction>
+                </div>
+                <picture className={classes.hero__img}>
+                    <img src={heroImg} alt="Food served at Little Lemon"></img>
+                </picture>
+            </main>
+        </section>
     );
 };
 

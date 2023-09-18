@@ -5,14 +5,13 @@ import Logo from "../../assets/Logo.svg";
 const Footer = () => {
     return (
         <footer className={classes.footer}>
-            <div>
+            <div  className={classes.logo}>
                 <img
-                    className={classes.logo}
                     src={Logo}
                     alt="Little Lemon logo"></img>
             </div>
-            <div>
-                <ul className={classes.doormat}>
+            <div className={classes.doormat__main}>
+                <ul>
                     <li>
                         <button>Home</button>
                     </li>
@@ -33,8 +32,8 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <div>
-                <ul className={classes.doormat}>
+            <div className={classes.doormat__info}>
+                <ul>
                     <li>
                         <button>Address: 29th street East Chicago</button>
                     </li>
@@ -46,8 +45,8 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <div>
-                <ul className={classes.doormat}>
+            <div className={classes.doormat__socials}>
+                <ul>
                     <li>
                         <button>Facebook</button>
                     </li>

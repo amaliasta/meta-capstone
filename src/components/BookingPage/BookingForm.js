@@ -71,7 +71,7 @@ const BookingForm = ({ formState, occasions, dispatchFormState }) => {
 
     return bookingResult.submitted ? (
         <section className={classes.confirmation}>
-            <h4 data-testid="confirmation">{confirmationMessage.h4}</h4>
+            <h2 data-testid="confirmation">{confirmationMessage.h4}</h2>
             <p>{confirmationMessage.message}</p>
             <CallToAction
                 onClick={() => {
@@ -81,17 +81,14 @@ const BookingForm = ({ formState, occasions, dispatchFormState }) => {
             </CallToAction>
         </section>
     ) : (
-        <>
-            <h4 className={classes.title}>Booking form</h4>
+        <section className={classes.form}>
+            <h2>Booking form</h2>
             <Formik
                 initialValues={formState}
                 validationSchema={yupValidationSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     submitForm(values);
                     setSubmitting(false);
-                    // setTimeout(() => {
-                    //     alert(JSON.stringify(formState, null, 2));
-                    // }, 400);
                 }}>
                 {({ isSubmitting, isValid, dirty, setFieldValue }) => (
                     <Form className={classes.form} data-testid="form">
@@ -203,7 +200,7 @@ const BookingForm = ({ formState, occasions, dispatchFormState }) => {
                     </Form>
                 )}
             </Formik>
-        </>
+        </section>
     );
 };
 export default BookingForm;

@@ -1,14 +1,14 @@
 import React from "react";
-import classes from './Card.module.css'
+import classes from "./Card.module.css";
 
-const Card = ( {...props} ) => {
+const Card = ({ alt, src, name, children }) => {
     return (
         <div className={classes.card}>
-            <h4>Rating</h4>
+            <h4>{name}</h4>
             <picture>
-                <img src="" alt={props.alt}></img>
+                <img src={src} alt={alt} className={classes.avatar}></img>
             </picture>
-            <p>{props.children}</p>
+            <p>{children}</p>
         </div>
     );
 };

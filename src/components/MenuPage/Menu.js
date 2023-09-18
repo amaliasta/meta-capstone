@@ -17,8 +17,8 @@ const Menu = () => {
                         <span>$12.99</span>
                     </div>
                     <p>
-                        The famous greek salad of crispy lettuce, peppers,
-                        olives and our Chicago style feta cheese, garnished with
+                        Our famous greek salad: crispy lettuce, peppers,
+                        olives and our Chicago-style feta cheese, garnished with
                         crunchy garlic and rosemary croutons.
                     </p>
                 </div>
@@ -50,7 +50,7 @@ const Menu = () => {
                     </div>
                     <p>
                         This comes straight from grandma’s recipe book, every
-                        last ingredient has been sourced and is as authentic as
+                        ingredient as authentic as
                         can be imagined.
                     </p>
                 </div>

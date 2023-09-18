@@ -1,32 +1,39 @@
 import React from "react";
-import classes from './Testimonials.module.css';
+import classes from "./Testimonials.module.css";
 import Card from "../UI/Card";
+import avatar1 from "../../assets/avatar__1.jpg"
+import avatar2 from "../../assets/avatar__2.jpg"
+import avatar3 from "../../assets/avatar__3.jpg"
 
 const Testimonials = () => {
     const testimonials = [
         {
-            name: "Jenny Smith",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quas saepe, perferendis eos id a voluptate commodi eum nesciunt, distinctio voluptatum minima, omnis sunt totam quidem fugit nisi similique consequatur.",
+            src: avatar2,
+            name: "Jane Smith",
+            text: "Amazing dining experience! Little Lemon exceeded my expectations with their delicious dishes, impeccable service, and cozy ambiance. A must-visit spot for any food lover in the Windy City.",
         },
         {
-            name: "Olivia Pearce",
-            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti corrupti ut soluta atque est illum quo, quod harum quia vero! Amet fugiat non maiores qui repellendus beatae eveniet rerum cumque.",
+            src: avatar3,
+            name: "Andrew Moe",
+            text: "Little Lemon offers a delightful culinary journey through Chicago's flavors. From their mouthwatering deep-dish pizza to their delectable desserts, every bite was a taste of perfection.",
         },
-        {
-            name: "John Altson",
-            text: "Ultrices mi tempus imperdiet nulla malesuada pellentesque. Vitae elementum curabitur vitae nunc sed. Aliquam ut porttitor leo a diam sollicitudin tempor id. Nulla posuere sollicitudin aliquam ultrices. Risus ultricies tristique nulla aliquet enim tortor at auctor. Amet purus gravida quis blandit. Sit amet tellus cras adipiscing enim eu turpis egestas pretium.",
+        {   src: avatar1,
+            name: "John Doe",
+            text: "Little Lemon  is a true gem in the city's food scene. The diverse menu, friendly staff, and inviting atmosphere make it my go-to restaurant for both casual dining and special occasions.",
         },
     ];
 
     return (
-        <section className={classes.section}>
-            <h2>Testimonials</h2>
-            <div className={classes.testimonials}>
-                {testimonials.map((item, idx) => (
-                    <Card key={idx} alt={item.name}>
-                        {item.text}
-                    </Card>
-                ))}
+        <section className={classes.testimonials}>
+            <div className={classes.testimonials__content}>
+                <h2>Testimonials</h2>
+                <div className={classes.testimonial__items}>
+                    {testimonials.map((item, idx) => (
+                        <Card key={idx} alt={item.name} src={item.src} name={item.name}>
+                            {item.text}
+                        </Card>
+                    ))}
+                </div>
             </div>
         </section>
     );
