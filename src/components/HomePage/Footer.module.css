@@ -1,10 +1,15 @@
 .footer {
     margin-top: auto;
+    background-color: var(--primary-green-tint);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: var(--primary-green-tint);
-    color: #fff;
-    padding: 2rem;
 }
 
 .footer div {
@@ -39,7 +44,7 @@
 }
 
 @media (max-width: 700px) {
-    .footer {
+    .wrapper {
         grid-template-columns: 2fr 1.5fr;
         justify-items: flex-start;
     }
@@ -70,7 +75,7 @@
 }
 
 @media (max-width: 450px) {
-    .footer {
+    .wrapper {
         grid-template-columns: 1fr;
         justify-items: center;
     }
