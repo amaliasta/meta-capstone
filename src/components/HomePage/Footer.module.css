@@ -39,6 +39,10 @@
     gap: 2rem;
 }
 
+.logo img {
+    width: 15rem;
+}
+
 .link {
     color: var(--primary-green);
 }
@@ -72,6 +76,10 @@
         grid-column: 1 / 2;
         grid-row: 2;
     }
+
+    .logo img {
+        width: 10rem;
+    }
 }
 
 @media (max-width: 450px) {
@@ -102,5 +110,9 @@
     .doormat__info {
         grid-column: 1 / 2;
         grid-row: 4;
+    }
+
+    .logo img {
+        width: 5rem;
     }
 }
