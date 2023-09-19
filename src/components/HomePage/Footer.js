@@ -48,13 +48,13 @@ const Footer = () => {
                 <div className={classes.doormat__info}>
                     <ul>
                         <li>
-                            <button>Address: 29th street East Chicago</button>
+                            <button>Address: 29th Blvd, Chicago</button>
                         </li>
                         <li>
                             <button>Email: littlelemon@gmail.com</button>
                         </li>
                         <li>
-                            <button>Phone: 49 911525</button>
+                            <button>Phone: 312 525</button>
                         </li>
                     </ul>
                 </div>
