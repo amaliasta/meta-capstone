@@ -1,34 +1,33 @@
 import React from "react";
 import classes from "./Footer.module.css";
 import Logo from "../../assets/Logo.svg";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
     return (
         <footer className={classes.footer}>
-            <div  className={classes.logo}>
-                <img
-                    src={Logo}
-                    alt="Little Lemon logo"></img>
+            <div className={classes.logo}>
+                <img src={Logo} alt="Little Lemon logo"></img>
             </div>
             <div className={classes.doormat__main}>
                 <ul>
                     <li>
-                        <button>Home</button>
+                        <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <button>About</button>
+                        <NavLink to="/about">About</NavLink>
                     </li>
                     <li>
-                        <button>Menu</button>
+                        <NavLink to="/menu">Menu</NavLink>
                     </li>
                     <li>
-                        <button>Reservations</button>
+                        <NavLink to="/booking">Reservations</NavLink>
                     </li>
                     <li>
-                        <button>Order Online</button>
+                        <NavLink to="/order">Order Online</NavLink>
                     </li>
                     <li>
-                        <button>Login</button>
+                        <NavLink to="/login">Login</NavLink>
                     </li>
                 </ul>
             </div>

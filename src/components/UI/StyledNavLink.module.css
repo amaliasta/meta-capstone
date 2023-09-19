@@ -1,29 +1,18 @@
-.nav {
-    min-width: 50rem;
-    margin-top: 1rem;
-}
-
-.list {
-    display: flex;
-    gap: 3rem;
-    justify-content: space-around;
-}
-
-.list a {
-    font-size: 1.8rem;
-}
-
-.list li {
+.list__item {
     position: relative; /* Create a stacking context for the ::before pseudo-element */
 }
 
-.list a {
+.list__item a {
+    font-size: 1.8rem;
+}
+
+.list__item a {
     text-decoration: none;
     position: relative;
     border-radius: 0.5rem;
 }
 
-.list a::before {
+.list__item a::before {
     content: "";
     position: absolute;
     bottom: -1rem;
@@ -36,9 +25,9 @@
     transition: all 0.5s ease-out;
 }
 
-.list a:hover::before,
-.list a:focus::before,
-.list a:focus-visible::before {
+.list__item a:hover::before,
+.list__item a:focus::before,
+.list__item a:focus-visible::before {
     background-color: var(--primary-yellow); /* Color of the line on hover */
     transform: scaleX(1); /* Expand the line on hover */
 }
@@ -48,22 +37,7 @@
 }
 
 @media (max-width: 124rem) {
-    .list {
-        flex-wrap: wrap;
-    }
-
-    .list a {
+    .list__item a {
         font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .nav {
-        min-width: 0;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
     }
 }

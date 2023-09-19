@@ -3,6 +3,7 @@
     align-items: center;
     flex-direction: column;
     gap: 2rem;
+    min-height: 40vh;
 }
 
 .form input {

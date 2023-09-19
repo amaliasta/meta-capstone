@@ -10,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
     margin-right: 6rem;
-
 }
 
 .about__text p {
@@ -37,7 +36,7 @@
     margin-top: -8rem;
 }
 
-@media (max-width: 1240px) { 
+@media (max-width: 1240px) {
     .about {
         max-width: 90%;
         align-items: center;

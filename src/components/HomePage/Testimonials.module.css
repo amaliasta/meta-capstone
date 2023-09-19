@@ -1,7 +1,5 @@
 .testimonials {
     background-color: var(--primary-green-tint);
-    /* display: flex;
-    justify-content: center; */
 }
 
 .testimonials__content {

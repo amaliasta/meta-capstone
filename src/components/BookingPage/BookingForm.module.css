@@ -16,10 +16,10 @@
 }
 
 .confirmation {
-    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 18rem 0;
 }
 
 .error {

@@ -19,7 +19,7 @@ const Main = () => {
     const occasions = ["Anniversary", "Birthday", "Other"];
     const initState = {
         resDate: new Date().toISOString().split("T")[0],
-        resTime: "",
+        resTime: "17",
         guests: 1,
         occasion: occasions[0],
         availableTimes: []

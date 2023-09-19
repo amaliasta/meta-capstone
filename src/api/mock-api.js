@@ -1,5 +1,4 @@
 // Simulated API functions
-
 export function initializeLocalStorage() {
     const currentDate = new Date();
     const timeSlots =  ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
@@ -21,7 +20,7 @@ export function fetchAPI(date) {
     const bookingData = JSON.parse(rawData);
     return new Promise((resolve) => {
         setTimeout(() => {
-            const availableTimes = bookingData ? bookingData[date] : []; // Failing here
+            const availableTimes = bookingData ? bookingData[date] : [];
             resolve(availableTimes);
         }, 400);
     });
@@ -31,7 +30,7 @@ export function fetchAPI(date) {
 export function submitAPI(formData) {
     return new Promise((resolve) => {
         setTimeout(() => {
-            const success = Math.random() < 1; // Simulate 80% success rate
+            const success = Math.random() < 1; // To simulate 80% success rate change to 0.8
             if (success) {
                 const rawData = localStorage.getItem("bookingData");
                 const bookingData = JSON.parse(rawData);

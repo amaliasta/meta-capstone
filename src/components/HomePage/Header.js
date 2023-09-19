@@ -1,26 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Nav from "./Nav";
 import Logo from "../../assets/Logo.svg";
 import classes from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    const isMobile = screenWidth < 700;
-
-    useEffect(() => {
-        const handleResize = () => {
-            setScreenWidth(window.innerWidth);
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
+const Header = ({ isMobile, setIsOpen, isOpen }) => {
     const openMenu = () => {
         setIsOpen((prev) => !prev);
     };

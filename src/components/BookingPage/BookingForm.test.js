@@ -1,7 +1,7 @@
 import { render, screen, act, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import BookingForm from "./BookingForm";
-import Main from "./Main";
+import Booking from "./Booking";
 import { toHaveAttribute } from "@testing-library/jest-dom";
 
 const formState = {
@@ -31,7 +31,7 @@ test("Renders the BookingForm", () => {
 });
 
 test("Submits the booking form", async () => {
-    render(<Main />);
+    render(<Booking />);
 
     const dateInputField = screen.getByTestId("select-date");
     const currentDate = new Date().toISOString().split("T")[0];
@@ -50,7 +50,7 @@ test("Submits the booking form", async () => {
     const selectGuestsField = screen.getByTestId("select-guests");
     const selectOccasionField = screen.getByTestId("select-occasion");
     const submitBtn = screen.getByTestId("submit");
-    
+
     act(() => {
         userEvent.selectOptions(selectTimeField, "18:00");
 
@@ -130,9 +130,8 @@ describe("BookingForm Component", () => {
 });
 
 test("Disables booking form submit button", async () => {
-    render(<Main />);
+    render(<Booking />);
 
-    // Simulate user interactions: Fill in the form fields
     const dateInputField = screen.getByTestId("select-date");
     const selectGuestsField = screen.getByTestId("select-guests");
     const selectOccasionField = screen.getByTestId("select-occasion");
@@ -148,7 +147,6 @@ test("Disables booking form submit button", async () => {
         userEvent.selectOptions(selectOccasionField, "Anniversary");
     });
 
-    // Wait for options to appear
     await waitFor(() => {
         const customOption = screen.getAllByTestId("time-option");
         expect(customOption).toBeTruthy();

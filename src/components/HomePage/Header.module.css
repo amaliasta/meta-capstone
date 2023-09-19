@@ -16,7 +16,6 @@
 }
 
 /* HAMBURGUER MENU */
-
 .wrapper {
     cursor: pointer;
     height: 3rem;
@@ -44,11 +43,9 @@
 
 .nav__btn::after {
     transform: translateY(1.3rem);
-    /* because transform origin is bottom, so as to offset height */
 }
 
 /* CROSS ICON */
-
 .cross {
     position: relative;
     width: 4rem;
@@ -75,7 +72,6 @@
 }
 
 /* Mobile Menu */
-
 .mobile__menu {
     position: absolute;
     top: 12rem;
@@ -84,7 +80,7 @@
     width: 100vw;
     background-color: var(--bkg-white);
     z-index: 1;
-    opacity: 1;
+    opacity: 0.9;
 }
 
 @media (max-width: 1240px) {
