@@ -30,13 +30,13 @@ Coming soon...
 
 ## Screenshots
 
-<div style="text-align:center;">
-![Desktop Homepage](./src/assets/demo/Laptop_home.png)
-</div>
+<p align="center">
+  <img src="./src/assets/demo/Laptop_home.png" alt="Desktop Homepage">
+</p>
 
-<div style="text-align:center;">
-![Mobile Homepage](./src/assets/demo/Mobile_home.png)
-</div>
+<p align="center">
+  <img src="./src/assets/demo/Mobile_home.png" alt="Mobile Homepage">
+</p>
 
 ## Installation
 
