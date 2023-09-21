@@ -26,7 +26,7 @@ The starting point for this project is a fictional family-owned restaurant locat
 
 ## Live Demo
 
-Coming soon...
+A live demo of this site can be found [here](https://amaliasta.github.io/meta-capstone/).
 
 ## Screenshots
 
