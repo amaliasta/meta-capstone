@@ -11,6 +11,7 @@ const Footer = () => {
                     <img src={Logo} alt="Little Lemon logo"></img>
                 </div>
                 <div className={classes.doormat__main}>
+                    <h4>Navigation</h4>
                     <ul>
                         <li>
                             <NavLink to="/">Home</NavLink>
@@ -33,6 +34,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={classes.doormat__socials}>
+                    <h4>Socials</h4>
                     <ul>
                         <li>
                             <button>Facebook</button>
@@ -46,6 +48,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={classes.doormat__info}>
+                    <h4>Contacts</h4>
                     <ul>
                         <li>
                             <button>Address: 29th Blvd, Chicago</button>
